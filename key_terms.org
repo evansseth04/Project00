@@ -37,19 +37,49 @@ c. He levitates, he's an alien "HEELLLLLOOOO!"
 
 d. Why do I care about Superman again, he's in the D.C. universe ... so dark and terrible movies!
 
-Contrapositive
+* Contrapositive
+** Definition
+   It is when you take the hypothesis and conclusion of a conditional statement and switch and negate both.
+   If the propostion is true the contrapositive will also be true.
+** Example
+   The statement "If you study you will get an A" will turn into "if you did not get an A then you did not study"
 
-Converse
+* Converse
+** Definition
+   It is when you switch the hypothesis and conclusion of a condition statement.
+   The propostion may be true but the converse will be false.
+** Example
+   The statement "If you study you will get an A" will turn into "If you got an A then you studied"
 
-inverse
+* Inverse
+** Definition
+   It is when you negate both the hypothesis and the conclusion of a conditional statement.
+   The propostion may be true but the inverse may be false.
+** Example
+   The statement "If you study you will get an A" becomes "If you do not study you will not get an A"
 
-R: real numbers
+* R: real numbers
+** Definition
+   It is all numbers on the number line. It includes positives, negatives, integers, rational numbers, etc.
+** Example
+   1, 2, 3, 4, 5, 1/2, -6, -122, 3/112.
 
-Z: integers
+* Z: integers
+** Definition
+   All positive and negative whole numbers. 
+** Example
+   1, 2, 3, 4, -5, -55, -32, 0.
 
-Q: rational numbers
+* Q: rational numbers
+** Definition
+   All positive and negative fractions.
+** Example
+   1/2, 3/4, 5/6, 111/25.
 
-predicate
+* Predicate
+** Definition
+   
+** Example
 
 Domain
 
