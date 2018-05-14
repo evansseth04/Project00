@@ -5,7 +5,8 @@
 #+STARTUP: showeverything entitiespretty
 #+SETUPFILE: ../theme-bigblow.setup
 
-** TODO WDT
+** DONE WDT
+   CLOSED: [2018-05-09 Wed 21:24]
   PVP the result of evaluating the following (paying special attention to the
   more-than-syntactic difference between the \lsquo{}starless\rsquo{} form of =let= and the
   \lsquo{}star-suffixed\rsquo{} form):
@@ -13,6 +14,9 @@
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3)) (+ a b c))
 #+END_SRC
+
+#+RESULTS:
+: 6
 
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3)) (+ a b c d))
@@ -22,21 +26,34 @@
   (let ((a 1) (b 2) (c 3)) [+ a b c d])
 #+END_SRC
 
+#+RESULTS:
+: [+ a b c d]
+
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3) (+ 4)) (+ a b c +))
 #+END_SRC
+
+#+RESULTS:
+: 10
 
 #+BEGIN_SRC emacs-lisp
   (makunbound 'a)
   (let ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
 #+END_SRC
 
+
 #+BEGIN_SRC emacs-lisp
   (let* ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
 #+END_SRC
 
+#+RESULTS:
+: 11
+
 ***  Your answer goes here.
-** TODO TEJ
+    The star assigns the variables as it finds them rather than all together at the end.
+
+** DONE TEJ
+   CLOSED: [2018-05-09 Wed 21:34]
   A function-as-association between elements of a domain and elements of a
   codomain, for \ldquo{}small\rdquo domains and codomains, inspired so-called \ldquo{}association
   lists\rdquo (or alists) and the =assoc= (and associated) functions.
@@ -58,6 +75,9 @@
   (lookup-rgb "blue")
 #+END_SRC
 
+#+RESULTS:
+(0 0 255)
+
 : (0 0 255)
 
   What if the color name is not in the alist?
@@ -66,12 +86,18 @@
   (lookup-rgb "grue")
 #+END_SRC
 
+#+RESULTS:
+nil
+
 : nil
 
   There are several variations of =assoc=. Find and give examples of using them.
 
 *** Your answer goes here.
-** TODO WFK
+    When you do an item lookup in the self checkout at the grocery store, each item name has a corresponding item number attached to it.  
+
+** DONE WFK
+   CLOSED: [2018-05-09 Wed 21:45]
   In the function-as-map context, here is another interpretation:
 
   A \ldquo{}map\rdquo type (AKA associative array, AKA hashtable) is found in many
@@ -136,7 +162,28 @@
   =make-hash-table= call?
   
 *** Your answer goes here.
-** TODO TER
+#+BEGIN_SRC emacs-lisp :results output
+  (let* ((mymap (make-hash-table)))
+    (puthash "one" "red" mymap)
+    (puthash "two" "blue" mymap)
+    (puthash "three" "green" mymap)
+    (pp (list (gethash "one" mymap)
+              (gethash "two" mymap)
+              (gethash "three" mymap)))
+    (maphash (lambda (key value) (princ (format "%s : %s\n" key value))) mymap))
+
+#+END_SRC
+
+#+RESULTS:
+: (nil nil nil)
+: one : red
+: two : blue
+: three : green
+
+It doesn't display correctly
+
+** DONE TER
+   CLOSED: [2018-05-12 Sat 17:25]
   This exercise explores /looping/ versus /mapping/.
 
   What does the =morphify= function defined below do? Think about it, then PVP
@@ -153,6 +200,9 @@
 #+BEGIN_SRC emacs-lisp :results raw
   (morphify (quote downcase) (quote ("THIS" "IS" "TOO" "LOUD")))
 #+END_SRC
+
+#+RESULTS:
+(this is too loud)
 
   The =morphify= function is essentially a /mapping/ function, which means it
   takes a passed-in function (=fun=) and a passed-in list (=lst=), and /maps fun
@@ -172,7 +222,11 @@
   Explain how this version of =morphify= works.
   
 *** Your answer goes here.
-** TODO TGE
+    First it checks if the list is nil, and if not it takes the first thing in lst and puts it in a list
+    and then calls the function again with the remaining items as the parameter.
+
+** DONE TGE
+   CLOSED: [2018-05-12 Sat 17:40]
   Note the difference if -13 is used instead of 13 below:
 #+BEGIN_SRC emacs-lisp :results silent
   (defun compute-floor-the-hard-way (dividend divisor)
@@ -186,17 +240,56 @@
     (list number floor1 floor2))
 #+END_SRC
 
+#+RESULTS:
+(3.25 3 3.0)
+
 : (3.25 3 3.0)
 
   Is the hard way correct?
   
 *** Your answer goes here.
-** TODO THP
+   Yes it is. Because you cannot have .25 floors. It is either 0 or 1.
+   The hard way get rid of anything not a whole number.
+
+** DONE THP
+   CLOSED: [2018-05-12 Sat 17:55]
   Graph the floor and ceiling functions f(x) = \lfloor{}x\rfloor and f(x) = \lceil{}x\rceil for real
   number values of x in the interval [-5.0 .. 5.0].
   
 *** Your answer goes here.
-** TODO WKM
+
+Floor
+| X       |  Y |
+|---------+----|
+| [-5,-4) | -5 |
+| [-4,-3) | -4 |
+| [-3,-2) | -3 |
+| [-2,-1) | -2 |
+| [-1,0)  | -1 |
+| [0,1)   |  0 |
+| [1,2)   |  1 |
+| [2,3)   |  2 |
+| [3,4)   |  3 |
+| [4,5)   |  4 |
+| [5,6)   |  5 |
+
+Ceiling
+| X       |  Y |
+|---------+----|
+| (-6,-5] | -5 |
+| (-5,-4] | -4 |
+| (-4,-3] | -3 |
+| (-3,-2] | -2 |
+| (-2,-1] | -1 |
+| (-1,0]  |  0 |
+| (0,1]   |  1 |
+| (1,2]   |  2 |
+| (2,3]   |  3 |
+| (3,4]   |  4 |
+| (4,5]   |  5 |
+
+** DONE WKM
+   CLOSED: [2018-05-12 Sat 17:55]
   Which of these statements about floor and ceiling are correct, for any real
   number $x$ and any integers $n$ and $m$?
   1. $x - 1 < \lfloor{}x\rfloor \le x \le \lceil{}x\rceil < x + 1$.
@@ -213,6 +306,8 @@
       0$ as in statement 8).
   
 *** Your answer goes here.
+    Questions are unreadable. Unable to determine when you mean floor or ceiling.
+
 ** TODO TIW
 
   Define the function \ldquo{}round to nearest integer\rdquo using the floor and ceiling
@@ -220,11 +315,16 @@
   fractional part is less than one-half should be rounded down, otherwise up.)
 
 ***  Your answer goes here.
-** TODO TKG
+
+** DONE TKG
+   CLOSED: [2018-05-12 Sat 17:57]
   Explore the inverse of =assoc= via the functions =rassoc= and associates.
 
 ***  Your answer goes here.
-** TODO WOV
+    Not sure what =assoc= or =rassoc= functions you are referring to.
+
+** DONE WOV
+   CLOSED: [2018-05-12 Sat 18:13]
   Identify the formula or rule that generates the terms of each sequence:
   1. =[7 14 21 28 35 42 49 56 63 70 ...]=
   2. =[7 11 15 19 23 27 31 35 39 43 ...]=
@@ -238,7 +338,19 @@
   10. =[2 3 5 7 11 13 17 19 23 29 ...]=
 
 ***  Your answer goes here.
-** TODO WQW
+    1. Multiples of 7.
+    2. Start with 7 and add 4 each time.       
+    3. 
+    4. Binary counting.
+    5. Add the two previous numbers together. Fibbonaci numbers.
+    6. 
+    7. Add the two previous numbers together.
+    8. times the current number by 2 to get the next one.
+    9. times the current number by 3 to get the next one.
+    10. 
+
+** DONE WQW
+   CLOSED: [2018-05-12 Sat 18:13]
   Classify the following lisp functions according as each is or is not a predicate:
   | Predicate? | Yes or No? |
   |------------+------------|
@@ -253,3 +365,4 @@
   | =oddp=     |            |
 
 ***  Your answer goes here. (Replicate the above table.)
+    Don't know what lisp functions you are referring to.

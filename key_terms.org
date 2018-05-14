@@ -78,81 +78,108 @@ d. Why do I care about Superman again, he's in the D.C. universe ... so dark and
 
 * Predicate
 ** Definition
-   
+   A predicate is either a relation or the boolean-valued function that amounts to the indicator function of the relation
+** Example
+   Function P:x->{true,false} is called a predicate on X. It is used to check whether the statement is true or false.
+
+* Domain
+** Definition
+   It is the set of the independant variables defined in a function.
+   Usually it is the X values used to obtain the Y values.
+** Example
+   In the function F(x)=x+2 it would be all acceptable values for x.
+
+* CoDomain
+** Definition
+   It is the set in which all the outputs of a function will fall into.
+   Also refered to as the range.
+** Example
+   It is all the outcomes of all possible inputs of the function F(x)=x^2+5
+
+* Quantifier
+** Definition
+** Example 
+
+* Antecedent
+** Definition
 ** Example
 
-Domain
+* Consequent
+** Definition
+** Example
 
-CoDomain
+* Set
+** Definition
+** Example
 
-quantifier
+* Fallacy
+** Definition
+** Example
 
-antecedent
+* Biconditional
+** Definition
+** Example
 
-consequent
+* Sufficient condition
+** Definition
+** Example
 
-Set
-
-Fallacy
-
-biconditional
-
-sufficient condition
-
-necessary condition
+* Necessary condition
+** Definition
+** Example
 
 ~p
 
-p ^ q
+ p ^ q
 
-p V q
+ p V q
 
-p XOR q
+ p XOR q
 
-p == q
+ p == q
 
-p -> q
+ p -> q
 
-p <--> q
+ p <--> q
 
-Three dots in a triangle
+ Three dots in a triangle
 
-upside down A
+ upside down A
 
-Backwards E
+ Backwards E
 
-union
+ union
 
-intersection
+ intersection
 
-Commutative laws
+ Commutative laws
 
-associative laws
+ associative laws
 
-distributive laws
+ distributive laws
 
-identity laws
+ identity laws
 
-negation laws
+ negation laws
 
-double negative law
+ double negative law
 
-idempotent laws
+ idempotent laws
 
-universal bound laws
+ universal bound laws
 
-De morgan's laws
+ De morgan's laws
 
-absorption laws
+ absorption laws
 
-negations of t and c
+ negations of t and c
 
-vacuously true
+ vacuously true
 
-Modus Ponens
+ Modus Ponens
 
-Modus Tollens
+ Modus Tollens
 
-Elimination: valid argument form
+ Elimination: valid argument form
 
-Transitivity: Valid Argument form
+ Transitivity: Valid Argument form

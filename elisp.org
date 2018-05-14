@@ -11,16 +11,77 @@ NOTE: Comment your code, and verify it works for "breaking cases" i.e. 0! = 1.
 #+BEGIN_SRC emacs-lisp
 (+ 2 3 4)
 #+END_SRC
+
+#+RESULTS:
+: 9
+
+
+#+BEGIN_SRC emacs-lisp
+(defun factorial(x)
+   (setq total 1)
+   (while (> x 0)
+     (setq total (* total x))
+     (decf x))
+   total)
+
+(factorial 4)
+#+END_SRC
+
+#+RESULTS:
+: 24
+
+#+BEGIN_SRC emacs-lisp
+(factorial 8)
+
+#+END_SRC
+
+#+RESULTS:
+: 40320
+
+
 ** Test cases
+#+BEGIN_SRC emacs-lisp
+(factorial 0)
+
+#+END_SRC
+
+#+RESULTS:
+: 1
+
 ** How big a number will make your computer freeze?
+   When the number gets over 60 something it causes wrap around.
+   None of the numbers I have tried have caused my computer to freeze.
+
 * "Real-World" function with mapcar
 ** What is mapcar
+   It goes through a supplied list and calls a function using each item of the list as an input.
 ** Code
+#+BEGIN_SRC emacs-lisp
+(setq cool-list '(2 5 22 15))
+(defun square (x)
+   (* x x))
+
+(mapcar 'square cool-list)
+#+END_SRC
+
+#+RESULTS:
+| 4 | 25 | 484 | 225 |
+
 #+BEGIN_SRC emacs-lisp
 
 #+END_SRC
 * Loop function
 ** Code
 #+BEGIN_SRC emacs-lisp
+(defun count-numbers (x) ; Will return the sum of all of the numbers from 0 to the number input.
+   (setq total 0)
+   (while (> x 0)
+     (incf total x)
+     (decf x))
+   total)
 
+(count-numbers 10)
 #+END_SRC
+
+#+RESULTS:
+: 55

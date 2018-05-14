@@ -7,3 +7,40 @@
 NOTE: You must get this approved by Brother Benning.
 
 * Special Project
+1. Hat Puzzle
+
+   |       | 1st student | 2nd student | 3rd student |
+   |-------+-------------+-------------+-------------|
+   | white | x           |             |             |
+   | white |             | x           |             |
+   | white |             |             | x           |
+   | red   |             |             |             |
+   | red   |             |             |             |
+   |       |             |             |             |
+
+   She has a white hat and can prove it.
+
+2. Knights and Knaves.
+   
+   a. A is a knave an B is a knight.
+   b. C is a knave and D is a knight.
+   c. 1 knave.
+   d. U is a knave.
+      V is a knave.
+      W is a knight.
+      X is a knave.
+      Y is a knight.
+      Z is a knave.
+
+3. Computer Program
+   
+   There is an undeclared variable in the first five lines.
+
+4. Sharky
+   
+   Muscles killed Sharky. He is also the only one to tell the truth.
+
+5. Balance
+
+  You toss the coin twice and if they are different results you go with the first.
+  If they are the same then you start over.

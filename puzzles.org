@@ -18,7 +18,11 @@ with only 2 weights!
   and the sum of the rest of the digits is 16? Write elisp code with and without
   loops to verify your answer.
 *** Rephrase
+    Looking at all numbers between 1 and a million, how many times does a number contain one 1 
+    and have the rest of the numbers add up to 16.
+    I will need to write elisp code with and without loops.
 *** Approach
+    
 *** Solution
 *** Proof
 ** TODO TME
